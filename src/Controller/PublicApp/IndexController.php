@@ -13,11 +13,12 @@ class IndexController extends AbstractActionController
 		$userInfo = $this->scripto()->apiClient()->queryUserInfo();
 		$user = $this->scripto()->apiClient()->queryUser($userInfo['name']);
 
-		$userCons = [];
-		$watchlist = [];
-		if ($this->scripto()->apiClient()->userIsLoggedIn()) {
-		    $response = $this->scripto()->apiClient()->queryUserContributions($userInfo['name'], 10);
-		    $userCons = $this->scripto()->prepareMediawikiList($response['query']['usercontribs']);
+
+        $userCons = [];
+        $watchlist = [];
+        if ($this->scripto()->apiClient()->userIsLoggedIn()) {
+            $response = $this->scripto()->apiClient()->queryUserContributions($userInfo['name'], 10);
+            $userCons = $this->scripto()->prepareMediawikiList($response['query']['usercontribs']);
 
 		    $response = $this->scripto()->apiClient()->queryWatchlist(720, 20); // 30 days
 		    $watchlist = $this->scripto()->prepareMediawikiList($response['query']['watchlist']);
@@ -39,17 +40,17 @@ class IndexController extends AbstractActionController
 	    {
 		$form = $this->getForm(CreateAccountForm::class);
 
-		if ($this->getRequest()->isPost()) {
-		    $form->setData($this->getRequest()->getPost());
-		    if ($form->isValid()) {
-			$formData = $form->getData();
-			try {
-			    $this->scripto()->apiClient()->createAccount(
-				$formData['username'], $formData['password'], $formData['retype'],
-				$formData['email'], $formData['realname']
-			    );
-			    $this->messenger()->addSuccess('Your Scripto account has been created! Please check your email for a link to activate your account.'); // @translate
-                    return $this->redirect()->toRoute('site/scripto', ['action' => 'index'], [], true);
+        if ($this->getRequest()->isPost()) {
+            $form->setData($this->getRequest()->getPost());
+            if ($form->isValid()) {
+                $formData = $form->getData();
+                try {
+                    $this->scripto()->apiClient()->createAccount(
+                        $formData['username'], $formData['password'], $formData['retype'],
+                        $formData['email'], $formData['realname']
+                    );
+                    $this->messenger()->addSuccess('Your Scripto account has been created! Please check your email for a link to activate your account.'); // @translate
+                    return $this->redirect()->toRoute('site/scripto');
                 } catch (CreateaccountException $e) {
                     $this->messenger()->addError($e->getMessage());
                 }
