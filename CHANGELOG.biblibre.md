@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.0+biblibre.3] - 2024-05-30
+
+- Fix redirect after account creation
+
 ## [1.3.0+biblibre.2] - 2024-04-23
 
 - Fix logout link
@@ -11,5 +15,6 @@
 - Move public app routes under the 'site' route, making them customizable by
   themes
 
+[1.3.0+biblibre.3]: https://github.com/biblibre/omeka-s-module-Scripto/releases/tag/v1.3.0+biblibre.3
 [1.3.0+biblibre.2]: https://github.com/biblibre/omeka-s-module-Scripto/releases/tag/v1.3.0+biblibre.2
 [1.3.0+biblibre.1]: https://github.com/biblibre/omeka-s-module-Scripto/releases/tag/v1.3.0+biblibre.1
