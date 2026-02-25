@@ -1,0 +1,5 @@
+<?= $this->octopusViewer()->mediaView([
+    'media-query' => http_build_query(['id' => $media->id()]),
+    'media-id' => $media->id(),
+    'fullscreen-title' => $media->displayTitle(),
+]) ?>

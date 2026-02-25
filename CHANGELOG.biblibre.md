@@ -1,5 +1,9 @@
 # Changelog
 
+Unreleased
+
+- Use OctopusViewer for all types of media (not only "renderable images")
+
 ## [1.5.0+biblibre.3] - 2026-02-25
 
 - Use OctopusViewer instead of panzoom if possible

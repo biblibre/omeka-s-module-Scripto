@@ -33,7 +33,9 @@ $this->scripto()->postSubtitle(sprintf($this->translate('Original title: %s'), $
                 <button type="button" name="vertical" id="vertical-layout" aria-label="<?php echo $this->escapeHtml($this->translate('Vertical view')); ?>" title="<?php echo $this->escapeHtml($this->translate('Vertical view')); ?>"></button>
             </div>
             <div class="wikitext-flex">
-                <?php if ($sMedia->isRenderableImage()): ?>
+                <?php if ($this->getHelperPluginManager()->has('octopusViewer')): ?>
+                    <?= $this->partial('scripto/public-app/common/octopus-viewer', ['media' => $media]) ?>
+                <?php elseif ($sMedia->isRenderableImage()): ?>
                 <?php echo $this->partial('common/media-viewer'); ?>
                 <?php else: ?>
                 <div class="panzoom-container" style="min-width: 50%;">

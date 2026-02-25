@@ -8,7 +8,9 @@ $this->scripto()->postSubtitle(sprintf($this->translate('Original title: %s'), $
 <?php echo $this->partial('common/media-head.phtml'); ?>
 <div class="resource-content">
     <div class="media render">
-    <?php if ($sMedia->isRenderableImage()): ?>
+    <?php if ($this->getHelperPluginManager()->has('octopusViewer')): ?>
+        <?= $this->partial('scripto/public-app/common/octopus-viewer', ['media' => $media]) ?>
+    <?php elseif ($sMedia->isRenderableImage()): ?>
     <?php echo $this->partial('common/media-viewer'); ?>
     <?php else: ?>
     <div class="panzoom-container" style="min-width: 50%;">
