@@ -1,3 +1,13 @@
+<?php if ($this->status()->isSiteRequest() && $this->getHelperPluginManager()->has('octopusViewer')): ?>
+
+<?= $this->octopusViewer()->mediaView([
+    'media-query' => http_build_query(['id' => $media->id()]),
+    'media-id' => $media->id(),
+    'fullscreen-title' => $media->displayTitle(),
+]) ?>
+
+<?php else: ?>
+
 <?php
 $this->headScript()->appendFile($this->assetUrl('vendor/panzoom-4.3.1/dist/panzoom.min.js', 'Scripto'));
 $this->headScript()->appendFile($this->assetUrl('js/common/media-viewer.js', 'Scripto'));
@@ -14,3 +24,5 @@ $this->headScript()->appendFile($this->assetUrl('js/common/media-viewer.js', 'Sc
       <img src="<?php echo $this->escapeHtml($media->originalUrl()); ?>" id="panzoom-img">
   </div>
 </div>
+
+<?php endif; ?>
