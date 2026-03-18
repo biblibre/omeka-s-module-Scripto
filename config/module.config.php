@@ -89,6 +89,11 @@ return [
             ],
         ],
     ],
+    'resource_page_block_layouts' => [
+        'invokables' => [
+            'scriptoProjects' => 'Scripto\Site\ResourcePageBlockLayout\ScriptoProjects',
+        ],
+    ],
     'router' => [
         'routes' => [
             'site' => [

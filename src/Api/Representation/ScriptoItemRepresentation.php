@@ -24,6 +24,7 @@ class ScriptoItemRepresentation extends AbstractEntityRepresentation
             'site/scripto-item-id',
             [
                 'action' => $action,
+                'site-project-id' => $this->resource->getScriptoProject()->getId(),
                 'project-id' => $this->resource->getScriptoProject()->getId(),
                 'item-id' => $this->resource->getItem()->getId(),
             ],

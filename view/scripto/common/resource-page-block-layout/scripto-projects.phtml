@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var AbstractResourceEntityRepresentation $resource
+ */
+
+$scriptoResources = [];
+if ($resource instanceof Omeka\Api\Representation\MediaRepresentation) {
+    $scriptoResources = $this->api()->search('scripto_media', ['media_id' => $resource->id()])->getContent();
+} elseif ($resource instanceof Omeka\Api\Representation\ItemRepresentation) {
+    $scriptoResources = $this->api()->search('scripto_items', ['item_id' => $resource->id()])->getContent();
+}
+?>
+<?php if ($scriptoResources): ?>
+    <dl class="scripto-projects">
+        <div class="property">
+            <dt><?= $this->translatePlural('Transcription project', 'Transcription projects', count($scriptoResources)) ?></dt>
+            <?php foreach ($scriptoResources as $scriptoResource): ?>
+                <dd class="value">
+                    <?= $this->hyperlink($scriptoResource->scriptoProject()->title(), $scriptoResource->url()) ?>
+                </dd>
+            <?php endforeach; ?>
+        </div>
+    </dl>
+<?php endif; ?>
