@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add resource page block layout showing links to projects
+
 ## [1.5.0+biblibre.4] - 2026-02-25
 
 - Use OctopusViewer for all types of media (not only "renderable images")

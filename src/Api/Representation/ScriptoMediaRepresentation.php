@@ -25,6 +25,7 @@ class ScriptoMediaRepresentation extends AbstractEntityRepresentation
             'site/scripto-media-id',
             [
                 'action' => $action,
+                'site-project-id' => $this->resource->getScriptoItem()->getScriptoProject()->getId(),
                 'project-id' => $this->resource->getScriptoItem()->getScriptoProject()->getId(),
                 'item-id' => $this->resource->getScriptoItem()->getItem()->getId(),
                 'media-id' => $this->resource->getMedia()->getId(),
@@ -100,6 +101,11 @@ class ScriptoMediaRepresentation extends AbstractEntityRepresentation
     public function scriptoItem()
     {
         return $this->getAdapter('scripto_items')->getRepresentation($this->resource->getScriptoItem());
+    }
+
+    public function scriptoProject()
+    {
+        return $this->scriptoItem()->scriptoProject();
     }
 
     public function media()
