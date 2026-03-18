@@ -1,5 +1,6 @@
 <?php
 $this->scripto()->postTitle($item->displayTitle());
+$this->scripto()->postSubtitle($item->link('View item'));
 ?>
 <div class="resource-content">
     <?php if ($itemMetadata = $item->displayValues()): ?>
