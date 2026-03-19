@@ -120,6 +120,5 @@ In order to successfully uninstall Scripto, the module must be still be active. 
 
 scriptoproject
 scriptoPublicView
-themeingScripto
 troubleshootingScripto
 ```
