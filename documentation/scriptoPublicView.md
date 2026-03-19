@@ -27,6 +27,15 @@ Once you have applied this block to a site, it also creates a link from the proj
 
 ![Top of a scripto project page with a red highlight over the link to the Omeka S site.](images/scripto-pageBlocklink.png)
 
+### Scripto resource page block
+
+When you add the Scripto module, it creates a new [resource page block](https://omeka.org/s/docs/user-manual/sites/site_theme/#configure-resource-pages) called "Scripto projects".
+
+The Scripto resource page blocks offers a list of links to the Scripto projects the current resource is a part of.
+
+The Scripto resource page blocks is available for items and media.
+
+
 ## Public-side user dashboard
 From the public side, users have access to their dashboard, which givens them an overview of your Contributions and your Watchlist.
 
