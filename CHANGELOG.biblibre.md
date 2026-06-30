@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## [1.5.0-p1] - 2026-06-30
 
 - Add resource page block layout showing links to projects
 - Add links to resources in Scripto public pages
@@ -23,6 +23,7 @@
 
 Bad release. Don't use it
 
+[1.5.0-p1]: https://github.com/biblibre/omeka-s-module-Scripto/releases/tag/v1.5.0-p1
 [1.5.0+biblibre.4]: https://github.com/biblibre/omeka-s-module-Scripto/releases/tag/v1.5.0+biblibre.4
 [1.5.0+biblibre.3]: https://github.com/biblibre/omeka-s-module-Scripto/releases/tag/v1.5.0+biblibre.3
 [1.5.0+biblibre.2]: https://github.com/biblibre/omeka-s-module-Scripto/releases/tag/v1.5.0+biblibre.2
